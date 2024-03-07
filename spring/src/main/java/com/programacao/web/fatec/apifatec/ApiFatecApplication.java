@@ -30,6 +30,7 @@ public class ApiFatecApplication {
 		}*/
 	
 	@RequestMapping("/n1/{n}")
+	String n1 = "gg";
 	String n1(@PathVariable String n) {		
 		int n1 = Integer.parseInt(n);		
 		if (n1>0 && n1 <12) {
