@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import jakarta.websocket.server.PathParam;
 
-@RestController
+@RestController // define ser o principal
 @SpringBootApplication
 public class ApiFatecApplication {
 	double set = 71*10100;
@@ -24,12 +24,12 @@ public class ApiFatecApplication {
 	double n() {
 		return set;	
 		}
-	/*@RequestMapping("/n1/{num}")
+	@RequestMapping("/numero/{num}")
 	double n1(@PathVariable Double num) {
 		return num;	
-		}*/
+		}
 	
-	@RequestMapping("/n1/{n}")	
+	@RequestMapping("/idade/{n}")	
 	String n1(@PathVariable String n) {		
 		int n1 = Integer.parseInt(n);		
 		if (n1>0 && n1 <12) {
@@ -43,12 +43,32 @@ public class ApiFatecApplication {
 		}else {
 			return "dado invalido";
 		}			
-	}	
+	}
+	@RequestMapping("/animal/{bixo}")
+	String animal(@PathVariable String bixo) {
+		
+		String[] animal = {"cao","gato","cavalo","vaca","porco"};
+		String[] sons = {"AUAU!!","MIAU!!", "IHHIIII", "MUU","INHOC INHOC!!"};
+		for (int i = 0; i < sons.length; i++) {
+			if (bixo == animal[i]) {
+				return sons [i];				
+			}else {
+				return "animal invalido";
+			}			
+		}
+		
+		
+		return "tks";
+		
+	
+	}
+	
 	
 	
 	public static void main(String[] args) {
 		SpringApplication.run(ApiFatecApplication.class, args);
 		
+		System.out.print("gg");
 		
 	}
 }
