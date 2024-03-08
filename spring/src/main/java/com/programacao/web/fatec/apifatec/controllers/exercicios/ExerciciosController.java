@@ -4,7 +4,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 public class ExerciciosController {
-	@RequestMapping("/n1/{n}")	
+	@RequestMapping("/idade-string/{n}")	
 	String n1(@PathVariable String n) {		
 		int n1 = Integer.parseInt(n);		
 		if (n1>0 && n1 <12) {
@@ -20,4 +20,5 @@ public class ExerciciosController {
 		}
 
 	}
+
 }

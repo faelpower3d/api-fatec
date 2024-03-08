@@ -42,10 +42,9 @@ public class ApiFatecApplication {
 			return "Idoso";
 		}else {
 			return "dado invalido";
-		}
-			
-			
-		}
+		}			
+	}	
+	
 	
 	public static void main(String[] args) {
 		SpringApplication.run(ApiFatecApplication.class, args);
