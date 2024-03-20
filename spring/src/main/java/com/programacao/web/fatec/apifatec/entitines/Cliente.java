@@ -6,17 +6,12 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Email;
 
 
 @Entity 
-@Table(name = "clientes") /*cria tabela cliente*/
-public class Cliente {
-	/*private Long id;
-	private String nome;
-	private String razaoSocial;
-	private String endereco;
-	private String email;*/
-	
+@Table(name = "clientes") //cria tabela cliente
+public class Cliente {	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -29,6 +24,10 @@ public class Cliente {
 	
 	@Column ()
 	private String endereco;
+	
+	@Column ()
+	@Email
+	private String email;
 
 	public Long getId() {
 		return id;
@@ -60,6 +59,14 @@ public class Cliente {
 
 	public void setEndereco(String endereco) {
 		this.endereco = endereco;
+	}
+	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 }
