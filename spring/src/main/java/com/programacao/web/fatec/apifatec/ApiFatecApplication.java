@@ -18,10 +18,10 @@ public class ApiFatecApplication {
 	public CommandLineRunner run(@Autowired ClienteRepository clienteRepository) {
 		return args -> {
 			Cliente cliente = new Cliente();
-			cliente.setNome("Danilo");
-			cliente.setEmail("h2danilofatec@hotmail.com");
-			cliente.setEndereco("Rua pedro, 126");
-			cliente.setRazaoSocial("Danilo");
+			cliente.setNome("Jão Melão");
+			cliente.setEmail("jao@hotmail.com");
+			cliente.setEndereco("Rua thurusbango, 69");
+			cliente.setRazaoSocial("Melão");
 			
 			clienteRepository.save(cliente);
 		};
