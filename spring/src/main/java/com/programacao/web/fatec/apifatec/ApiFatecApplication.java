@@ -22,15 +22,13 @@ public class ApiFatecApplication {
 			cliente.setEmail("jao@hotmail.com");
 			cliente.setEndereco("Rua thurusbango, 69");
 			cliente.setRazaoSocial("Melão");
+			clienteRepository.save(cliente);			
 			
-			clienteRepository.save(cliente);
 		};
 	}	
 	
 	public static void main(String[] args) {
-		SpringApplication.run(ApiFatecApplication.class, args);
-		
-		System.out.print("gg");
+		SpringApplication.run(ApiFatecApplication.class, args);		
 		
 	}
 }
