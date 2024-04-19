@@ -15,7 +15,7 @@ public class Produto {
 	private long id;
 	
 	@Column (nullable = false, length = 60)
-	private String produto;
+	private String nome;
 	
 	@Column (name = "preço", nullable = false)
 	private double preco;	
@@ -35,11 +35,11 @@ public class Produto {
 	}
 
 	public String getProduto() {
-		return produto;
+		return nome;
 	}
 
 	public void setProduto(String produto) {
-		this.produto = produto;
+		this.nome = produto;
 	}
 
 	public double getPreco() {
