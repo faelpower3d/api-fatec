@@ -17,28 +17,23 @@ public class ApiFatecApplication {
 	
 	
 	@Bean
-	public CommandLineRunner run(@Autowired ClienteRepository clienteRepository) {
+	public CommandLineRunner run(@Autowired ClienteRepository clienteRepository, @Autowired ProdutoRepository produtoRepository) {
 		return args -> {
 			Cliente cliente = new Cliente();
 			cliente.setNome("Jão Melão");
 			cliente.setEmail("jao@hotmail.com");
 			cliente.setEndereco("Rua thurusbango, 69");
 			cliente.setRazaoSocial("Melão");
-			clienteRepository.save(cliente);			
+			clienteRepository.save(cliente);	
 			
-		};
-	};	
-	
-	public CommandLineRunner run(@Autowired ProdutoRepository produtoRepository) {
-		return args -> {
 			Produto prod = new Produto();
 			prod.setProduto("Memoria RAM 8 GB");
 			prod.setQuantidade(2);
 			prod.setPreco(100);
-			produtoRepository.save(prod);				
-		
+			produtoRepository.save(prod);	
+			
 		};
-	}
+	};	
 	
 	
 	public static void main(String[] args) {

@@ -23,7 +23,7 @@ public class PedidoVendaItem {
 	@ManyToOne
 	@JoinColumn(name= "pedido_venda_id")
 	@JsonIgnore
-	private PedidoVenda PedidoVenda;
+	private PedidoVenda pedidoVenda;
 	
 	@ManyToOne
 	@JoinColumn(name="produto_id")
@@ -46,11 +46,11 @@ public class PedidoVendaItem {
 	}
 
 	public PedidoVenda getPedidoVenda() {
-		return PedidoVenda;
+		return pedidoVenda;
 	}
 
 	public void setPedidoVenda(PedidoVenda pedidoVenda) {
-		PedidoVenda = pedidoVenda;
+		this.pedidoVenda = pedidoVenda;
 	}
 
 	public Produto getProduto() {
