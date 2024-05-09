@@ -7,7 +7,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 import com.programacao.web.fatec.apifatec.entitines.Cliente;
+import com.programacao.web.fatec.apifatec.entitines.Produto;
 import com.programacao.web.fatec.apifatec.domain.cliente.ClienteRepository;
+import com.programacao.web.fatec.apifatec.domain.produto.ProdutoRepository;
 
 
 @SpringBootApplication
@@ -25,7 +27,19 @@ public class ApiFatecApplication {
 			clienteRepository.save(cliente);			
 			
 		};
-	}	
+	};	
+	
+	public CommandLineRunner run(@Autowired ProdutoRepository produtoRepository) {
+		return args -> {
+			Produto prod = new Produto();
+			prod.setProduto("Memoria RAM 8 GB");
+			prod.setQuantidade(2);
+			prod.setPreco(100);
+			produtoRepository.save(prod);				
+		
+		};
+	}
+	
 	
 	public static void main(String[] args) {
 		SpringApplication.run(ApiFatecApplication.class, args);		
